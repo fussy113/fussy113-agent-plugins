@@ -76,14 +76,14 @@ allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*
 
 ### 4. 実装方針ドキュメントの保存
 
-合意できたら、方針ドキュメントを `docs/spec/` に保存する。
+合意できたら、方針ドキュメントを `.claude/spec/` に保存する。
 
 ```bash
 date +%Y%m%d   # 日付プレフィックスに使う
 ```
 
-- ファイル名: `docs/spec/<YYYYMMDD>-<slug>.md`(`slug` はタイトルを kebab-case 化したもの)。
-- `docs/spec/` ディレクトリが無くても Write が親ごと作成する。
+- ファイル名: `.claude/spec/<YYYYMMDD>-<slug>.md`(`slug` はタイトルを kebab-case 化したもの)。
+- `.claude/spec/` ディレクトリが無くても Write が親ごと作成する。
 - 下記「出力フォーマット」に従って Write し、**保存先パスをユーザーに提示**する。最後に「実装に進むときは `/dev-discipline:spec-implement <このパス>` を実行してください」と案内する。
 
 **ドキュメントの長さは内容に見合わせる。** 合意した実質(機能要件・スコープ外・受け入れ条件・方針)はきちんとカバーしつつ、埋め草・定型文・既に書いたことの言い換えで膨らませない。該当がない項目は1行で「特になし」と書いて次へ進む。
