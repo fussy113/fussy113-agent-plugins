@@ -7,6 +7,12 @@
 - **他プロジェクトにも配布する** → `plugins/<plugin>/skills/<skill>/SKILL.md`。既存プラグインに追加するか新規プラグインにするかを判断する。
 - **このリポジトリの作業にしか使わない** → `.agents/skills/<skill>/SKILL.md` を実体とし、`.claude/skills/<skill>` から `../../.agents/skills/<skill>` への symlink を張る。マーケットプレースには登録しない。
 
+## 推奨セクション構成
+
+`frontmatter → 目的1〜2文 → (鉄則) → 完了条件/停止ルール → 実行手順 → 出力フォーマット → 注意 → 使用例 → 関連`
+
+該当しないセクション(鉄則が無いスキル等)は省略する。
+
 ## frontmatter
 
 - `name`: ディレクトリ名と一致させる。

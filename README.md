@@ -24,7 +24,7 @@ Codex はプラグイン追加後、**新しいスレッド**を開始すると�
 
 | プラグイン | 対応 | 内容 |
 |---|---|---|
-| [github](plugins/github) | Claude Code / Codex | PR 作成・CI 失敗の修正・Dependabot PR レビュー |
+| [github](plugins/github) | Claude Code / Codex | PR 作成・CI 失敗の修正・依存関係更新 PR レビュー |
 | [dep-manager](plugins/dep-manager) | Claude Code / Codex | Renovate 設定・mise 環境整合 |
 | [dev-discipline](plugins/dev-discipline) | Claude Code / Codex | 仕様駆動・TDD・体系的デバッグ |
 | [guardrail](plugins/guardrail) | Claude Code / Codex | 危険コマンドのブロック・シークレット検出フック |

@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "GitHub",
     "shortDescription": "PR作成・CI失敗の修正・依存更新レビュー",
-    "longDescription": "gh CLI を使って、変更内容からの Draft PR 作成、PR の CI 失敗やレビューコメントの調査・修正、Dependabot PR の依存関係観点でのレビューを行う。",
+    "longDescription": "gh CLI を使って、変更内容からの Draft PR 作成、PR の CI 失敗やレビューコメントの調査・修正、依存関係更新 PR の依存関係観点でのレビューを行う。",
     "developerName": "fussy113",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write"],

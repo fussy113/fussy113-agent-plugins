@@ -41,4 +41,4 @@
 
 ## 関連
 
-- `github` の `/github:review-dependabot` — Dependabot が作成済みの PR をレビューしたい場合(本プラグインは設定の投入・チューニングを担い、レイヤーが異なる)。
+- `github` の `/github:review-dep-pr` — 依存関係更新 PR(Dependabot / Renovate 問わず)をレビューしたい場合(本プラグインは設定の投入・チューニングを担い、レイヤーが異なる)。

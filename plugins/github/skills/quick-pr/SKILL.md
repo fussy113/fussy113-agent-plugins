@@ -5,9 +5,13 @@ description: 変更内容を元にブランチ作成、コミット、プッシ�
 allowed-tools: Bash(git *) Bash(gh *)
 ---
 
-# Quick PR
+# /github:quick-pr — 変更から Draft PR まで一括実行
 
-現在の変更内容をもとに、新しいブランチの作成からDraft PRの作成までを一括で実行してください。
+現在の変更内容をもとに、新しいブランチの作成からDraft PRの作成までを一括で実行します。
+
+## 完了条件
+
+ブランチ作成・コミット・push・Draft PR 作成のすべてが成立していれば完了とする。`git push` と `gh pr create` は外部への書き込みのため、機密情報が疑われる場合は停止してユーザーに確認する(手順5)。
 
 ## 実行手順
 
@@ -36,7 +40,7 @@ allowed-tools: Bash(git *) Bash(gh *)
 
 5. **ステージングとコミット**
    - `git add -A` で全ての変更をステージング
-   - 機密情報（.env, credentials.jsonなど）が含まれていないか確認し、含まれていれば警告
+   - 機密情報(.env, credentials.jsonなど)が含まれていないか確認する。含まれている疑いがあれば、ここで処理を止めてユーザーに確認を取る(この先は push・PR 作成という外部への書き込みのため)
    - `git commit -m "{生成されたコミットメッセージ}"` を実行
 
 6. **リモートへのプッシュ**
@@ -99,3 +103,7 @@ allowed-tools: Bash(git *) Bash(gh *)
 # 自動生成されたブランチ名で実行
 /quick-pr
 ```
+
+## 関連
+
+- `/github:fix-pr` — 作成した PR の CI 失敗やレビューコメントに対応する場合。
