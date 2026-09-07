@@ -1,0 +1,25 @@
+{
+  "name": "dep-manager",
+  "version": "0.0.2",
+  "description": "依存関係とツールチェーンのバージョン管理を支援する5スキル。Renovate 設定(Dependabot移行・チューニング・mise連携)と mise 環境整合(ローカル/CI)をまとめて提供する",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
+  "license": "MIT",
+  "keywords": ["renovate", "mise", "dependency-management", "toolchain", "automerge", "github-actions"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Dep Manager",
+    "shortDescription": "Renovate 設定と mise 環境の整合を支援",
+    "longDescription": "Dependabot から Renovate への移行、Renovate 設定のチューニング、mise によるツールチェーンのローカル/CI 整合を支援する。",
+    "developerName": "fussy113",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Renovate 設定をこのプロジェクト向けに調整して",
+      "mise の設定を CI と揃えて"
+    ]
+  }
+}

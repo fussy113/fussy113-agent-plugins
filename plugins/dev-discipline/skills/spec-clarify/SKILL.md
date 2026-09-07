@@ -2,7 +2,7 @@
 name: spec-clarify
 description: テキスト・GitHub Issue・Notion・URLから仕様要件を取り込み、壁打ち対話で曖昧さを解消して docs/spec/ に実装方針ドキュメントを策定する。実装着手前の要件深掘り・方針合意に使う
 argument-hint: "[仕様テキスト | GitHub Issue URL/#番号 | Notion URL | URL (optional)]"
-allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*) WebFetch mcp__claude_ai_Notion__*
+allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*) WebFetch
 ---
 
 # /dev-discipline:spec-clarify — 仕様取り込みから実装方針策定まで
@@ -20,9 +20,7 @@ allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*
 
 ## レッドフラグ(これをやり始めたら立ち止まる)
 
-- 質問せず、自分の推測で要件の空欄を埋めている。
 - ユーザーが言っていないスコープを勝手に広げている / 縮めている。
-- 受け入れ条件(どうなれば完了か)が定義されないまま方針を書き始めている。
 - 取り込んだ仕様の内容を確認せず、URL を開いただけで分かったつもりになっている。
 - 非機能要件(性能・セキュリティ・保守性)やエラー時の挙動を一度も話題にしていない。
 
@@ -42,7 +40,7 @@ allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*
   本文だけでなくコメント欄の議論も取り込む。
 
 - **Notion**(`notion.so` / `notion.site` を含む URL)は3段フォールバック:
-  1. Notion MCP(`mcp__claude_ai_Notion__*`)が利用可能ならそれでページ内容を取得する。
+  1. Notion 連携の MCP ツールが利用可能ならそれでページ内容を取得する。
   2. 使えなければ `WebFetch` でページ URL を取得する(公開ページならこれで読める)。
   3. 非公開で取得できなければ、ユーザーに「このページは非公開のようです。本文をコピーして貼り付けてください」と依頼する。
 
@@ -76,14 +74,15 @@ allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*
 
 ### 4. 実装方針ドキュメントの保存
 
-合意できたら、方針ドキュメントを `.claude/spec/` に保存する。
+合意できたら、方針ドキュメントを `docs/spec/` に保存する。
 
 ```bash
 date +%Y%m%d   # 日付プレフィックスに使う
 ```
 
-- ファイル名: `.claude/spec/<YYYYMMDD>-<slug>.md`(`slug` はタイトルを kebab-case 化したもの)。
-- `.claude/spec/` ディレクトリが無くても Write が親ごと作成する。
+- ファイル名: `docs/spec/<YYYYMMDD>-<slug>.md`(`slug` はタイトルを kebab-case 化したもの)。
+- `docs/spec/` ディレクトリが無くても Write が親ごと作成する。
+- 旧バージョンでは `.claude/spec/` に保存していた。そこに既存ドキュメントがある場合の移設は必須ではなく、ユーザーの判断に委ねる。
 - 下記「出力フォーマット」に従って Write し、**保存先パスをユーザーに提示**する。最後に「実装に進むときは `/dev-discipline:spec-implement <このパス>` を実行してください」と案内する。
 
 **ドキュメントの長さは内容に見合わせる。** 合意した実質(機能要件・スコープ外・受け入れ条件・方針)はきちんとカバーしつつ、埋め草・定型文・既に書いたことの言い換えで膨らませない。該当がない項目は1行で「特になし」と書いて次へ進む。
@@ -141,8 +140,6 @@ date +%Y%m%d   # 日付プレフィックスに使う
 
 ## 注意事項
 
-- スコープ外を勝手に決めない。広げる/縮める判断は必ずユーザーに確認する。
-- 受け入れ条件が合意できないうちは方針ドキュメントを確定しない(鉄則)。
 - このスキルは**方針策定まで**を担う。コードの編集は行わない —— 実装は `/dev-discipline:spec-implement` に渡す。
 
 ## 使用例
@@ -156,4 +153,4 @@ date +%Y%m%d   # 日付プレフィックスに使う
 ## 関連
 
 - `/dev-discipline:spec-implement` — ここで策定した方針ドキュメントをもとに実装する。
-- `/token-ops:effort-router` — 実装に進む前のタスク規模/effort 見積もり(spec-implement から委譲)。
+- `/token-ops:effort-router` — 実装に進む前のタスク規模/effort 見積もり(spec-implement から委譲、Claude Code のみ)。

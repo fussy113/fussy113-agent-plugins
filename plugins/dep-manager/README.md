@@ -1,5 +1,7 @@
 # dep-manager
 
+対応: Claude Code / Codex
+
 依存関係とツールチェーンの**バージョン管理**を支援するスキル集。[Renovate](https://docs.renovatebot.com/) による依存更新の自動化と、[mise](https://mise.jdx.dev/) によるツールチェーン管理を1つにまとめています。
 (旧 `renovate` / `mise` を統合したプラグインです。)
 
@@ -39,4 +41,4 @@
 
 ## 関連
 
-- `github` の `/github:review-dependabot` — Dependabot が作成済みの PR をレビューしたい場合(本プラグインは設定の投入・チューニングを担い、レイヤーが異なる)。
+- `github` の `/github:review-dep-pr` — 依存関係更新 PR(Dependabot / Renovate 問わず)をレビューしたい場合(本プラグインは設定の投入・チューニングを担い、レイヤーが異なる)。

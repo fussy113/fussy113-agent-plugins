@@ -18,5 +18,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Validate marketplace and plugins
+      - name: Validate marketplace and plugins (Claude Code)
         run: pnpm run validate
+
+      - name: Validate marketplace and plugins (Codex)
+        run: pnpm run validate:codex

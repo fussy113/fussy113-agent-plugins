@@ -1,6 +1,7 @@
 [tools]
 node = "24.20.0"
 pnpm = "11.25.0"
+uv = "0.12.10"
 
 [env]
 _.file = ".env"

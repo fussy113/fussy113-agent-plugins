@@ -1,12 +1,12 @@
 {
   "name": "github",
   "description": "Use for development on GitHub",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "fussy113"
   },
   "homepage": "https://github.com/fussy113",
-  "repository": "https://github.com/fussy113/fussy113-cc-plugin",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
   "keywords": ["github"],
   "license": "MIT"
 }
