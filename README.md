@@ -50,6 +50,18 @@ plugins/<name>/
 
 新しいプラグインを両対応にするときは、`.codex-plugin/plugin.json` と `.agents/plugins/marketplace.json` のエントリを両方追加する。
 
+## リポジトリ内の作業用スキル
+
+配布はせず、このリポジトリでの作業にだけ使うスキル。実体は `.agents/skills/` に置き、
+`.claude/skills/` から symlink を張って Claude Code / Codex の双方に同じ実体を読ませている。
+
+| スキル | 役割 |
+|---|---|
+| `skill-new` | 新しいスキルを追加する(配置決定 → 執筆 → 登録 → 検証) |
+| `skill-revise` | 既存スキルを改訂する(改訂 → 波及確認 → 再検証) |
+
+執筆時の事実情報は [docs/skill-authoring.md](docs/skill-authoring.md)、スタイル規約は AGENTS.md / CLAUDE.md にある。
+
 ## 検証
 
 ```
