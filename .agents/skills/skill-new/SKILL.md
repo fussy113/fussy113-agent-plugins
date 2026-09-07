@@ -24,7 +24,7 @@ allowed-tools: Read Glob Grep Write Edit Bash(pnpm:*) Bash(ln:*) Bash(git status
 
 ### 4. 登録
 
-配置先に応じてマニフェスト・README を更新する。対応表は [docs/skill-authoring.md](../../../docs/skill-authoring.md) の「登録先の対応表」を参照。ローカルスキルの場合は `.claude/skills/<skill-name>` から `.agents/skills/<skill-name>` への symlink を張る:
+配置先に応じてマニフェスト・README を更新する。対応表は [docs/skill-authoring.md](../../../docs/skill-authoring.md) の「登録先の対応表」を参照。配布スキルの場合は同ドキュメントの「バージョンの更新」に従い、プラグインの `plugin.json` と `.claude-plugin/marketplace.json` のバージョンも上げる。ローカルスキルの場合は `.claude/skills/<skill-name>` から `.agents/skills/<skill-name>` への symlink を張る:
 
 ```bash
 ln -s ../../.agents/skills/<skill-name> .claude/skills/<skill-name>

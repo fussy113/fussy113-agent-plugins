@@ -27,6 +27,7 @@ AGENTS.md / CLAUDE.md の「スキル執筆の方針」を適用する。既存�
 - 他スキルからの相互参照: `Grep` で `<plugin>:<skill-name>` や当該スキル名を検索し、参照側の記述が古くならないか確認する。
 - プラグイン README・ルート README のスキル一覧表。
 - `name` を変更する場合: 両方の `plugin.json`(`.claude-plugin/` / `.codex-plugin/`)、両方の `marketplace.json`、ディレクトリ名、ローカルスキルなら symlink 名も揃える。
+- 配布スキルの場合: [docs/skill-authoring.md](../../../docs/skill-authoring.md) の「バージョンの更新」に従い、プラグインの `plugin.json` と `.claude-plugin/marketplace.json` のバージョンを上げる。
 
 ### 5. 検証(実際に実行する)
 

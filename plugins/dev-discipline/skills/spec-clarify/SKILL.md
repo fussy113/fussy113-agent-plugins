@@ -2,7 +2,7 @@
 name: spec-clarify
 description: テキスト・GitHub Issue・Notion・URLから仕様要件を取り込み、壁打ち対話で曖昧さを解消して docs/spec/ に実装方針ドキュメントを策定する。実装着手前の要件深掘り・方針合意に使う
 argument-hint: "[仕様テキスト | GitHub Issue URL/#番号 | Notion URL | URL (optional)]"
-allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*) WebFetch mcp__claude_ai_Notion__*
+allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*) WebFetch
 ---
 
 # /dev-discipline:spec-clarify — 仕様取り込みから実装方針策定まで
@@ -20,9 +20,7 @@ allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*
 
 ## レッドフラグ(これをやり始めたら立ち止まる)
 
-- 質問せず、自分の推測で要件の空欄を埋めている。
 - ユーザーが言っていないスコープを勝手に広げている / 縮めている。
-- 受け入れ条件(どうなれば完了か)が定義されないまま方針を書き始めている。
 - 取り込んだ仕様の内容を確認せず、URL を開いただけで分かったつもりになっている。
 - 非機能要件(性能・セキュリティ・保守性)やエラー時の挙動を一度も話題にしていない。
 
@@ -142,8 +140,6 @@ date +%Y%m%d   # 日付プレフィックスに使う
 
 ## 注意事項
 
-- スコープ外を勝手に決めない。広げる/縮める判断は必ずユーザーに確認する。
-- 受け入れ条件が合意できないうちは方針ドキュメントを確定しない(鉄則)。
 - このスキルは**方針策定まで**を担う。コードの編集は行わない —— 実装は `/dev-discipline:spec-implement` に渡す。
 
 ## 使用例

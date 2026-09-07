@@ -1,7 +1,7 @@
 {
   "name": "dev-discipline",
   "description": "開発の規律を強制する4スキル。仕様駆動(取り込み→壁打ち→実装)、TDD(RED→GREEN→REFACTOR)、体系的デバッグ(理解→仮説→検証→修正)をまとめて提供する",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "fussy113"
   },
