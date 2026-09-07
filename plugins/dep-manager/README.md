@@ -1,5 +1,7 @@
 # dep-manager
 
+対応: Claude Code / Codex
+
 依存関係とツールチェーンの**バージョン管理**を支援するスキル集。[Renovate](https://docs.renovatebot.com/) による依存更新の自動化と、[mise](https://mise.jdx.dev/) によるツールチェーン管理を1つにまとめています。
 (旧 `renovate` / `mise` を統合したプラグインです。)
 

@@ -1,0 +1,25 @@
+{
+  "name": "dev-discipline",
+  "version": "0.0.1",
+  "description": "開発の規律を強制する4スキル。仕様駆動(取り込み→壁打ち→実装)、TDD(RED→GREEN→REFACTOR)、体系的デバッグ(理解→仮説→検証→修正)をまとめて提供する",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
+  "license": "MIT",
+  "keywords": ["spec", "tdd", "debugging", "discipline", "workflow", "skill"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Dev Discipline",
+    "shortDescription": "仕様駆動・TDD・体系的デバッグを強制",
+    "longDescription": "仕様の壁打ちから実装、TDD サイクル、体系的デバッグまで、開発の規律を保つワークフローを提供する。",
+    "developerName": "fussy113",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "この要求を仕様として壁打ちして",
+      "TDD サイクルでこの機能を実装して"
+    ]
+  }
+}

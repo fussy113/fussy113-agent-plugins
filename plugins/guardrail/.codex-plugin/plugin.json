@@ -1,0 +1,23 @@
+{
+  "name": "guardrail",
+  "version": "0.0.1",
+  "description": "危険コマンドのブロックとシークレット書き込みの確認をフックで自動化する。PreToolUse(Bash)で rm -rf / や force push 等を遮断し、PreToolUse(Write/Edit)で APIキー/秘密鍵の直書きを検出して確認を促す",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
+  "license": "MIT",
+  "keywords": ["security", "guardrail", "hooks", "pretooluse", "secret-detection"],
+  "interface": {
+    "displayName": "Guardrail",
+    "shortDescription": "危険コマンドとシークレット漏洩を自動でガード",
+    "longDescription": "rm -rf / や force push などの破壊的コマンドをブロックし、APIキー・秘密鍵の書き込みを検出して確認を促すフックを提供する。",
+    "developerName": "fussy113",
+    "category": "Developer Tools",
+    "capabilities": ["Read"],
+    "defaultPrompt": [
+      "このリポジトリに guardrail を適用して"
+    ]
+  }
+}

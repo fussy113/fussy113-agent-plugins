@@ -42,7 +42,7 @@ allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*
   本文だけでなくコメント欄の議論も取り込む。
 
 - **Notion**(`notion.so` / `notion.site` を含む URL)は3段フォールバック:
-  1. Notion MCP(`mcp__claude_ai_Notion__*`)が利用可能ならそれでページ内容を取得する。
+  1. Notion 連携の MCP ツールが利用可能ならそれでページ内容を取得する。
   2. 使えなければ `WebFetch` でページ URL を取得する(公開ページならこれで読める)。
   3. 非公開で取得できなければ、ユーザーに「このページは非公開のようです。本文をコピーして貼り付けてください」と依頼する。
 
@@ -76,14 +76,15 @@ allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*
 
 ### 4. 実装方針ドキュメントの保存
 
-合意できたら、方針ドキュメントを `.claude/spec/` に保存する。
+合意できたら、方針ドキュメントを `docs/spec/` に保存する。
 
 ```bash
 date +%Y%m%d   # 日付プレフィックスに使う
 ```
 
-- ファイル名: `.claude/spec/<YYYYMMDD>-<slug>.md`(`slug` はタイトルを kebab-case 化したもの)。
-- `.claude/spec/` ディレクトリが無くても Write が親ごと作成する。
+- ファイル名: `docs/spec/<YYYYMMDD>-<slug>.md`(`slug` はタイトルを kebab-case 化したもの)。
+- `docs/spec/` ディレクトリが無くても Write が親ごと作成する。
+- 旧バージョンでは `.claude/spec/` に保存していた。そこに既存ドキュメントがある場合の移設は必須ではなく、ユーザーの判断に委ねる。
 - 下記「出力フォーマット」に従って Write し、**保存先パスをユーザーに提示**する。最後に「実装に進むときは `/dev-discipline:spec-implement <このパス>` を実行してください」と案内する。
 
 **ドキュメントの長さは内容に見合わせる。** 合意した実質(機能要件・スコープ外・受け入れ条件・方針)はきちんとカバーしつつ、埋め草・定型文・既に書いたことの言い換えで膨らませない。該当がない項目は1行で「特になし」と書いて次へ進む。
@@ -156,4 +157,4 @@ date +%Y%m%d   # 日付プレフィックスに使う
 ## 関連
 
 - `/dev-discipline:spec-implement` — ここで策定した方針ドキュメントをもとに実装する。
-- `/token-ops:effort-router` — 実装に進む前のタスク規模/effort 見積もり(spec-implement から委譲)。
+- `/token-ops:effort-router` — 実装に進む前のタスク規模/effort 見積もり(spec-implement から委譲、Claude Code のみ)。

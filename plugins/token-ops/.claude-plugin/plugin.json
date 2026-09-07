@@ -6,7 +6,7 @@
     "name": "fussy113"
   },
   "homepage": "https://github.com/fussy113",
-  "repository": "https://github.com/fussy113/fussy113-cc-plugin",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
   "keywords": ["effort", "token-efficiency", "ccusage", "cost", "model-routing", "observability"],
   "license": "MIT"
 }
