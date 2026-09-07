@@ -1,0 +1,25 @@
+{
+  "name": "github",
+  "version": "0.0.2",
+  "description": "Use for development on GitHub",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
+  "license": "MIT",
+  "keywords": ["github"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GitHub",
+    "shortDescription": "PR作成・CI失敗の修正・依存更新レビュー",
+    "longDescription": "gh CLI を使って、変更内容からの Draft PR 作成、PR の CI 失敗やレビューコメントの調査・修正、依存関係更新 PR の依存関係観点でのレビューを行う。",
+    "developerName": "fussy113",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "この変更で Draft PR を作って",
+      "この PR の CI 失敗を調査して直して"
+    ]
+  }
+}

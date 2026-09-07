@@ -1,5 +1,7 @@
 # token-ops
 
+対応: Claude Code のみ(`/effort` `/model` `/fast` 等のセッション設定に依存)
+
 Claude Code の**トークン効率を最大化**するスキル集。タスク着手前の effort 見積もり(`effort-router`)と、実際の消費コストの可視化(`ccusage`)を1つにまとめています。
 (旧 `effort-router` / `ccusage` を統合したプラグインです。)
 

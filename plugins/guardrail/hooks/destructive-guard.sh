@@ -12,9 +12,14 @@ set -u
 
 input="$(cat)"
 
-# 実行コマンド文字列を取り出す(jq があれば厳密に、無ければ生入力で代替)
+# 実行コマンド文字列を取り出す(jq があれば厳密に、無ければ生入力で代替)。
+# tool_input.command は Claude Code では文字列、Codex の shell/exec_command 系では
+# 配列(["bash","-lc","..."] 等)で来ることがあるため、両方を素通しできる形にする。
 if command -v jq >/dev/null 2>&1; then
-  cmd="$(printf '%s' "$input" | jq -r '.tool_input.command // empty' 2>/dev/null)"
+  cmd="$(printf '%s' "$input" | jq -r '
+    .tool_input.command as $c
+    | if ($c | type) == "array" then ($c | join(" ")) else ($c // empty) end
+  ' 2>/dev/null)"
 else
   cmd="$input"
 fi

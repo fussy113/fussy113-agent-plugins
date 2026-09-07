@@ -1,5 +1,7 @@
 # dev-discipline
 
+対応: Claude Code / Codex
+
 開発の**規律を強制する**スキル集。仕様策定 → 実装 → テスト → デバッグの各局面で、「順序」と「ゴール」を崩さないためのガイドをまとめて提供します。
 (旧 `spec-driven` / `tdd-cycle` / `systematic-debug` を統合したプラグインです。)
 
