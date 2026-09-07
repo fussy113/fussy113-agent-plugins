@@ -62,7 +62,7 @@ ln -s ~/Dev/fussy113-cc-plugin/plugins/dep-manager/skills/mise-sync .agents/skil
 
 ## 指示ファイル
 
-`AGENTS.md -> CLAUDE.md` の symlink(本リポジトリで既に採用)を標準にする。CC は `AGENTS.md` も認識するため片方向 symlink で足りる。CC 固有の記述(effort、plan mode、subagent、`/` コマンド名)を `CLAUDE.md` に足すときは、Codex もそれを読むことを意識し、混乱を避けたい記述は見出しで区切る。
+`AGENTS.md -> CLAUDE.md` の symlink を標準にする。CC は `AGENTS.md` も認識するため片方向 symlink で足りる。CC 固有の記述(effort、plan mode、subagent、`/` コマンド名)を `CLAUDE.md` に足すときは、Codex もそれを読むことを意識し、混乱を避けたい記述は見出しで区切る。
 
 ## 新しい skill を書くときのチェックリスト
 
