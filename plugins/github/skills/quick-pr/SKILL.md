@@ -29,6 +29,7 @@ allowed-tools: Bash(git *) Bash(gh *)
      - 例: `feature/add-user-auth-20260129`
 
 3. **新しいブランチの作成**
+   - ブランチ作成前の現在のブランチを `base_branch` 変数に記録する: `base_branch=$(git branch --show-current)`
    - `git checkout -b {branch_name}` を実行
    - 既にブランチが存在する場合はエラーメッセージを表示
 
@@ -47,6 +48,7 @@ allowed-tools: Bash(git *) Bash(gh *)
    - `git push -u origin {branch_name}` を実行
 
 7. **Draft PRの作成**
+   - base ブランチ: 手順3で記録した `base_branch` を指定する(指定しない場合 `gh pr create` はリポジトリのデフォルトブランチをbaseにするため、フィーチャーブランチから派生させた場合に意図しないbaseになる)
    - PRタイトル: コミットメッセージの見出しをベースに生成
    - PR本文: 以下の形式で生成
      ```
@@ -72,7 +74,7 @@ allowed-tools: Bash(git *) Bash(gh *)
      ---
      このPRは `/quick-pr` で自動生成されました
      EOF
-     gh pr create --draft --title "{タイトル}" --body-file "$pr_body_file"
+     gh pr create --draft --base "$base_branch" --title "{タイトル}" --body-file "$pr_body_file"
      rm "$pr_body_file"
      ```
 
