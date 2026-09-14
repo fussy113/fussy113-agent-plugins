@@ -69,6 +69,8 @@ gh pr diff <PR番号>
 gh pr checks <PR番号>
 ```
 
+取得した `baseRefName` はこのPRのbaseブランチです。以降でbaseブランチとの比較が必要な場合(ローカルでのdiff確認など)は、`main` に決め打ちせずこの値を使用してください。
+
 ### 4. CI失敗の調査と修正
 
 `gh pr checks` の結果から失敗しているチェックを特定します。
