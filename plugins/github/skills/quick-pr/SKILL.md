@@ -29,7 +29,7 @@ allowed-tools: Bash(git *) Bash(gh *)
      - 例: `feature/add-user-auth-20260129`
 
 3. **新しいブランチの作成**
-   - ブランチ作成前の現在のブランチを `base_branch` として記録する(`git branch --show-current`)
+   - ブランチ作成前の現在のブランチを `base_branch` 変数に記録する: `base_branch=$(git branch --show-current)`
    - `git checkout -b {branch_name}` を実行
    - 既にブランチが存在する場合はエラーメッセージを表示
 
