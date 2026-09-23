@@ -29,7 +29,15 @@ allowed-tools: Bash(git *) Bash(gh *)
      - 例: `feature/add-user-auth-20260129`
 
 3. **新しいブランチの作成**
-   - ブランチ作成前の現在のブランチを `base_branch` 変数に記録する: `base_branch=$(git branch --show-current)`
+   - ブランチ作成前の現在のブランチ名を取得し、後続の手順(別のシェル呼び出しになる場合がある)でも参照できるよう一時ファイルに保存する:
+     ```bash
+     base_branch="$(git branch --show-current)"
+     if [ -z "$base_branch" ]; then
+       echo "現在のブランチを特定できません(detached HEADの可能性があります)。ブランチをcheckoutしてから再実行してください。"
+       exit 1
+     fi
+     echo "$base_branch" > /tmp/quick-pr-base-branch
+     ```
    - `git checkout -b {branch_name}` を実行
    - 既にブランチが存在する場合はエラーメッセージを表示
 
@@ -48,7 +56,7 @@ allowed-tools: Bash(git *) Bash(gh *)
    - `git push -u origin {branch_name}` を実行
 
 7. **Draft PRの作成**
-   - base ブランチ: 手順3で記録した `base_branch` を指定する(指定しない場合 `gh pr create` はリポジトリのデフォルトブランチをbaseにするため、フィーチャーブランチから派生させた場合に意図しないbaseになる)
+   - base ブランチ: 手順3で `/tmp/quick-pr-base-branch` に保存した値を指定する(指定しない場合 `gh pr create` はリポジトリのデフォルトブランチをbaseにするため、フィーチャーブランチから派生させた場合に意図しないbaseになる)。手順3と別のシェル呼び出しになっても参照できるよう、シェル変数ではなくファイルから読み込む
    - PRタイトル: コミットメッセージの見出しをベースに生成
    - PR本文: 以下の形式で生成
      ```
@@ -63,6 +71,7 @@ allowed-tools: Bash(git *) Bash(gh *)
      ```
    - PR本文を一時ファイルに書き出し、`--body-file` で渡します：
      ```bash
+     base_branch="$(cat /tmp/quick-pr-base-branch)"
      pr_body_file="$(mktemp)"
      cat <<'EOF' > "$pr_body_file"
      ## 概要
@@ -75,7 +84,7 @@ allowed-tools: Bash(git *) Bash(gh *)
      このPRは `/quick-pr` で自動生成されました
      EOF
      gh pr create --draft --base "$base_branch" --title "{タイトル}" --body-file "$pr_body_file"
-     rm "$pr_body_file"
+     rm "$pr_body_file" /tmp/quick-pr-base-branch
      ```
 
 8. **結果の表示**
