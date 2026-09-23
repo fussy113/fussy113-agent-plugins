@@ -1,7 +1,7 @@
 {
   "name": "fussy113-plugins",
   "metadata": {
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Bundled plugins for Claude Code"
   },
   "owner": {
