@@ -10,6 +10,7 @@
 |---|---|
 | `/github:quick-pr` | 現在の変更からブランチ作成・コミット・push・Draft PR 作成までを一括実行する |
 | `/github:fix-pr` | PR の CI 失敗やレビューコメントを調査し、修正・コミット・返信・スレッド解決を行う |
+| `/github:sync-pr` | base ブランチと conflict した PR を rebase で追従し、コンフリクトを解消して force push する |
 | `/github:review-dep-pr` | 依存関係更新 PR(Dependabot・Renovate・手動更新のいずれも)を依存関係更新の観点からレビューする |
 
 ## 使い方
@@ -20,6 +21,9 @@
 
 # PR の CI 失敗・レビューコメントに対応する
 /github:fix-pr 42
+
+# base と conflict した PR を rebase して追従する
+/github:sync-pr 42
 
 # 依存関係更新 PR をレビューする
 /github:review-dep-pr 42
