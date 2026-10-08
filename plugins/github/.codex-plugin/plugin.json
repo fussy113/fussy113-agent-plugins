@@ -1,6 +1,6 @@
 {
   "name": "github",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Use for development on GitHub",
   "author": {
     "name": "fussy113"
@@ -12,8 +12,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "GitHub",
-    "shortDescription": "PR作成・CI失敗の修正・依存更新レビュー",
-    "longDescription": "gh CLI を使って、変更内容からの Draft PR 作成、PR の CI 失敗やレビューコメントの調査・修正、依存関係更新 PR の依存関係観点でのレビューを行う。",
+    "shortDescription": "PR作成・CI失敗の修正・conflict解消・依存更新レビュー",
+    "longDescription": "gh CLI を使って、変更内容からの Draft PR 作成、PR の CI 失敗やレビューコメントの調査・修正、base ブランチとの conflict 解消(rebase と force push)、依存関係更新 PR の依存関係観点でのレビューを行う。",
     "developerName": "fussy113",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write"],
