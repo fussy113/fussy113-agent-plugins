@@ -1,0 +1,24 @@
+{
+  "name": "ja-writing",
+  "version": "0.0.1",
+  "description": "tanteki・natural-japanese・yomiyasu を順に通して日本語文書を作成・推敲するスキル",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
+  "license": "MIT",
+  "keywords": ["japanese", "writing", "proofreading", "skill"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "JA Writing",
+    "shortDescription": "日本語文書を3スキルで作成・推敲",
+    "longDescription": "構成と簡潔さ(tanteki)、自然さ(natural-japanese)、最終推敲(yomiyasu)を決まった順序で通し、日本語文書を仕上げる。",
+    "developerName": "fussy113",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "ja-writing でこの文書を推敲して"
+    ]
+  }
+}
