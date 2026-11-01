@@ -1,0 +1,17 @@
+{
+  "name": "ja-writing",
+  "description": "tanteki・natural-japanese・yomiyasu を順に通して日本語文書を作成・推敲するスキル",
+  "version": "0.0.2",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/fussy113-agent-plugins",
+  "keywords": [
+    "japanese",
+    "writing",
+    "proofreading",
+    "skill"
+  ],
+  "license": "MIT"
+}
