@@ -7,7 +7,7 @@
     "validate:codex": "bash scripts/validate-codex.sh"
   },
   "devDependencies": {
-    "@anthropic-ai/claude-code": "2.1.322",
+    "@anthropic-ai/claude-code": "2.1.329",
     "@openai/codex": "0.153.4"
   }
 }
