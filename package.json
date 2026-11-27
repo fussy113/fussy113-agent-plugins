@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "@anthropic-ai/claude-code": "2.1.329",
-    "@openai/codex": "0.153.4"
+    "@openai/codex": "0.172.0"
   }
 }
